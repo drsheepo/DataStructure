@@ -6,20 +6,43 @@ public class MyDataStructure implements DataStructure{
     // 95  96  97
     int nextPut = 0;
     int nextGet = 0;
+    int amountOfStuff = 0;
     public MyDataStructure() {
 
         this.objects = new Object[100];
 
     }
     public boolean put(Object obj) {
+        if ( amountOfStuff> 99) {
+
+            return false;
+        }
+        amountOfStuff = amountOfStuff + 1;
+        // amountOfStuff increased
+
         objects[nextPut] = obj;
-        nextPut = nextPut + 1;
-    return true;
-}
+        if (nextPut>98){
+            nextPut = 0;
+
+        } else {
+            nextPut = nextPut + 1;
+        }
+        return true;
+    }
+
     public Object get() {
-
+        if ( amountOfStuff == 0 ) {
+            return null;
+        }
+        amountOfStuff = amountOfStuff - 1;
         Object MyData = objects[nextGet];
+        if (nextGet < 99) {
+            nextGet = nextGet + 1;
+        } else {
+            nextGet = 0;
 
+
+        }
      return MyData;
     }
 }

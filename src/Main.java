@@ -3,17 +3,12 @@ public class Main {
         System.out.println("Let's make and test a Queue");
 
         MyDataStructure  myData = new MyDataStructure();
-        myData.put(95);
-        myData.put(96);
-        myData.put(97);
+        for (int i = 500; i < 800 ; i = i + 1) {
+            myData.put(i);
+            System.out.println(myData.get());
+        }
 
-        Object data1 = myData.get();
-        Object data2 = myData.get();
-        Object data3 = myData.get();
 
-        System.out.println(data1);  // 95
-        System.out.println(data2);
-        System.out.println(data3);
     }
 
 }
