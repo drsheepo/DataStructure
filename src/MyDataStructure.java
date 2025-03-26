@@ -12,7 +12,7 @@ public class MyDataStructure implements DataStructure{
         this.objects = new Object[100];
 
     }
-    public boolean put(Object obj) {
+    public synchronized boolean put(Object obj) {
         if ( amountOfStuff> 99) {
 
             return false;
@@ -30,7 +30,7 @@ public class MyDataStructure implements DataStructure{
         return true;
     }
 
-    public Object get() {
+    public synchronized Object get() {
         if ( amountOfStuff == 0 ) {
             return null;
         }
